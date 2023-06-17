@@ -2,18 +2,19 @@ package com.example.thelatestmovies.moviefeature.domain
 
 import com.example.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import com.example.thelatestmovies.moviefeature.data.models.MovieDataModel
+import javax.inject.Inject
 
 
-class MovieDomainInteractorImpl(private var movieRepoInteractor: MovieRepo) :
+class MovieDomainInteractorImpl@Inject constructor(private  val movieRepo: MovieRepo):
     MovieDomainInteractor {
 
     //Load movies
     override suspend fun loadMovies(): List<MovieDomainModel>? {
-        return movieRepoInteractor.loadMovies()
+        return movieRepo.loadMovies()
     }
 
     //Load movie detail
     override suspend fun loadMovieDetail(id: Int): MovieDetailDomainModel? {
-        return movieRepoInteractor.loadMovieDetail(id)
+        return movieRepo.loadMovieDetail(id)
     }
 }

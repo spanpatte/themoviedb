@@ -9,9 +9,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 //Call for Movie list API
-interface MovieListApi {
+interface MovieListApi : MovieApiInterface{
     @GET("/3/movie/popular")
-    suspend fun getMovies(@Query("api_key") apiKey: String): Response<MovieDataModelResponse>
+    override suspend fun getMovies(@Query("api_key") apiKey: String): Response<MovieDataModelResponse>
 
 
 }

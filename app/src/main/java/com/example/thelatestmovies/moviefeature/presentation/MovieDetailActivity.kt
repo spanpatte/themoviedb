@@ -18,7 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.example.thelatestmovies.moviefeature.Configs
 import com.example.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
 import com.example.thelatestmovies.moviefeature.data.StubData
 
@@ -35,7 +34,7 @@ class MovieDetailActivity : AppCompatActivity() {
         val id = intent.getIntExtra("movieId",0)
 
 
-        id?.let {
+        id.let {
 
             viewModel.loadMovieDetail(it)
             viewModel.exception.observe(this){
@@ -69,11 +68,11 @@ fun MovieDetailCard(movieDetail: MovieDetailModel?) {
 
             //Use of Glide to display image
             GlideImage(
-                model = Configs.imagePathBaseUrl + movieDetail.poster_path,
+                model = movieDetail.poster_path,
                 contentDescription = "",
                 modifier =
                 Modifier
-                    .background(color = Color.Blue))
+                    .background(color = Color.White))
             Text(text = movieDetail.original_title)
             Text(text = movieDetail.tagline)
             Text(text = movieDetail.release_date)

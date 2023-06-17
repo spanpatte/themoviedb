@@ -9,7 +9,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 //Call for Movie detail API
-interface MovieDetailApi {
+interface MovieDetailApi : MovieApiInterface{
     @GET("/3/movie/{id}")
-    suspend fun getMovieDetail(@Path("id") movieId: Int, @Query("api_key") apiKey: String ): Response<MovieDetailDataModel>
+    override suspend fun getMovieDetail(@Path("id") movieId: Int, @Query("api_key") apiKey: String ): Response<MovieDetailDataModel>
 }

@@ -1,8 +1,7 @@
-package com.example.thelatestmovies.moviefeature.domain
+package com.example.thelatestmovies.moviefeature.presentation
 
-import com.example.thelatestmovies.moviefeature.data.models.MovieDataModel
-import com.example.thelatestmovies.moviefeature.data.models.toMovieDomainModel
-import com.example.thelatestmovies.moviefeature.presentation.MovieModel
+import com.example.thelatestmovies.moviefeature.domain.MovieDomainModel
+import com.example.thelatestmovies.moviefeature.domain.toMovieModel
 
 class MovieDomainModelToModelMapper{
     companion object Mapper {

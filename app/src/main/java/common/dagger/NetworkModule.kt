@@ -1,7 +1,8 @@
 package common.dagger
 
 
-import com.example.thelatestmovies.moviefeature.Configs
+
+import com.example.thelatestmovies.moviefeature.data.datasource.DataConfigs
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -14,7 +15,7 @@ class NetworkModule {
     @Singleton
     internal fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Configs.movieApiBaseUrl)
+            .baseUrl(DataConfigs.movieApiBaseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

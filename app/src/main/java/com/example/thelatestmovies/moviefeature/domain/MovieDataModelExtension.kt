@@ -1,5 +1,6 @@
-package com.example.thelatestmovies.moviefeature.data.models
+package com.example.thelatestmovies.moviefeature.domain
 
+import com.example.thelatestmovies.moviefeature.data.models.MovieDataModel
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainModel
 import com.example.thelatestmovies.moviefeature.presentation.MovieModel
 
@@ -8,6 +9,6 @@ fun MovieDataModel.toMovieDomainModel(): MovieDomainModel =
     MovieDomainModel(
         id,
         original_title,
-        poster_path,
+        DomainConfigs.imagePathBaseUrl + poster_path,
 
     )

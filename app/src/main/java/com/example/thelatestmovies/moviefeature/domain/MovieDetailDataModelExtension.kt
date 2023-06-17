@@ -1,5 +1,6 @@
 package com.example.thelatestmovies.moviefeature.data.models
 
+import com.example.thelatestmovies.moviefeature.domain.DomainConfigs
 import com.example.thelatestmovies.moviefeature.domain.MovieDetailDomainModel
 import com.example.thelatestmovies.moviefeature.presentation.MovieDetailModel
 
@@ -12,7 +13,7 @@ fun MovieDetailDataModel.toMovieDetailDomainModel(): MovieDetailDomainModel =
         original_language,
         overview,
         popularity,
-        poster_path,
+        DomainConfigs.imagePathBaseUrl + poster_path,
         release_date,
         vote_count,
         tagline,

@@ -4,9 +4,7 @@ package com.example.thelatestmovies.moviefeature.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainInteractor
-import com.example.thelatestmovies.moviefeature.domain.MovieDomainModelToModelMapper
 import com.example.thelatestmovies.moviefeature.domain.toMovieDetailModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,7 +30,7 @@ class MovieDetailViewModel : ViewModel() {
         }
     }
 
-    fun setMovieDetail(newData: MovieDetailModel) {
+    private fun setMovieDetail(newData: MovieDetailModel) {
         movieDetail.postValue(newData)
     }
 
