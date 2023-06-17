@@ -5,9 +5,10 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.thelatestmovies.moviefeature.data.models.MovieEntity
-import com.example.thelatestmovies.moviefeature.data.models.toMovieModel
+import com.example.thelatestmovies.moviefeature.data.models.MovieDataModel
+import com.example.thelatestmovies.moviefeature.domain.toMovieModel
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainInteractor
+import com.example.thelatestmovies.moviefeature.domain.MovieDomainModelToModelMapper
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
@@ -26,10 +27,10 @@ class MovieListViewModel : ViewModel() {
 
         viewModelScope.launch(Dispatchers.IO) {
             withContext(context = this.coroutineContext) {
-                val value = try {
-                    var moviesData = movieDomainInteractor.loadMovies()
+                try {
+                    val moviesData = movieDomainInteractor.loadMovies()
                     Log.d("MyTag", Thread.currentThread().name)
-                    movies.postValue(moviesData?.let { map(it) })
+                    movies.postValue(moviesData?.let { MovieDomainModelToModelMapper.map(it) })
                 } catch (ex: Exception) {
                     exception.postValue(ex)
                 }
@@ -40,15 +41,7 @@ class MovieListViewModel : ViewModel() {
     }
 
 
-    //Map the dao to model. View may not need all the fields and Model should not be exposed to View
-    private fun map(movieDaolList: List<MovieEntity>): List<MovieModel> {
-        val modelList = ArrayList<MovieModel>()
-        for (dao in movieDaolList) {
-            val model = dao.toMovieModel()
-            modelList.add(model)
-        }
-        return modelList
-    }
+
 }
 
 

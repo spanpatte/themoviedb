@@ -67,7 +67,7 @@ fun MovieDetailCard(movieDetail: MovieDetailModel?) {
 
             //Use of Glide to display image
             GlideImage(
-                model = movieDetail.Poster,
+                model = movieDetail.poster_path,
                 contentDescription = "",
                 modifier =
                 Modifier
@@ -75,11 +75,11 @@ fun MovieDetailCard(movieDetail: MovieDetailModel?) {
 
             )
             Text(
-                text = movieDetail.Title,
+                text = movieDetail.original_title,
 
                 )
             Text(
-                text = movieDetail.Year,
+                text = movieDetail.release_date,
 
                 )
 

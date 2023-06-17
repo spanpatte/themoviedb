@@ -1,8 +1,10 @@
 package com.example.thelatestmovies.moviefeature.dagger
 
 
-import com.example.thelatestmovies.moviefeature.data.repos.MovieRepoImpl
-import com.example.thelatestmovies.moviefeature.data.repos.MovieRepoInteractor
+import com.example.thelatestmovies.moviefeature.data.datasource.MovieDataSource
+import com.example.thelatestmovies.moviefeature.data.datasource.MovieDataSourceImpl
+import com.example.thelatestmovies.moviefeature.domain.MovieRepoImpl
+import com.example.thelatestmovies.moviefeature.domain.MovieRepo
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainInteractorImpl
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainInteractor
 import dagger.Module
@@ -12,13 +14,20 @@ import retrofit2.Retrofit
 @Module
 class MovieModule {
     @Provides
-    fun provideMovieUseCase(movieRepo: MovieRepoInteractor): MovieDomainInteractor {
+    fun provideMovieUseCase(movieRepo: MovieRepo): MovieDomainInteractor {
         return MovieDomainInteractorImpl(movieRepo)
     }
 
+
     @Provides
-    fun provideMovieRepo(retrofit: Retrofit): MovieRepoInteractor {
-        return MovieRepoImpl(retrofit)
+    fun provideMovieDataSource(retrofit: Retrofit): MovieDataSource {
+        return MovieDataSourceImpl(retrofit)
     }
+
+    @Provides
+    fun provideMovieRepo(dataSource: MovieDataSource): MovieRepo {
+        return MovieRepoImpl(dataSource)
+    }
+
 
 }

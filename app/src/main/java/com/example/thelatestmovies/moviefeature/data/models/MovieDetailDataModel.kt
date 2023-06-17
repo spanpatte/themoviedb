@@ -1,8 +1,8 @@
-package com.example.thelatestmovies.moviefeature.presentation
+package com.example.thelatestmovies.moviefeature.data.models
 
-//Model for view to display movie details
+//Dao retrieved from remote source or database
 data class
-MovieDetailModel(
+MovieDetailDataModel(
     val id: Int,
     val original_title: String,
     val original_language: String,

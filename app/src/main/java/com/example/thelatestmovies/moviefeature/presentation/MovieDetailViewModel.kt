@@ -4,9 +4,10 @@ package com.example.thelatestmovies.moviefeature.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.thelatestmovies.moviefeature.data.models.MovieDetailEntity
-import com.example.thelatestmovies.moviefeature.data.models.toMovieDetailModel
+import com.example.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import com.example.thelatestmovies.moviefeature.domain.MovieDomainInteractor
+import com.example.thelatestmovies.moviefeature.domain.MovieDomainModelToModelMapper
+import com.example.thelatestmovies.moviefeature.domain.toMovieDetailModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,24 +25,18 @@ class MovieDetailViewModel : ViewModel() {
     fun loadMovieDetail(iD: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                movieUseCase.loadMovieDetail(iD)?.let { setMovieDetail(map(it)) }
+                movieUseCase.loadMovieDetail(iD)?.let { setMovieDetail(it.toMovieDetailModel()) }
             } catch (ex:Exception){
                 exception.postValue(ex)
             }
-
-
         }
     }
-    private fun map(movieDetailDao: MovieDetailEntity): MovieDetailModel {
-        return movieDetailDao.toMovieDetailModel()
-    }
+
     fun setMovieDetail(newData: MovieDetailModel) {
-        movieDetail.value = newData
+        movieDetail.postValue(newData)
     }
 
-    fun getMovieDetail(): MovieDetailModel? {
-        return movieDetail.value
-    }
+
 
 
 }

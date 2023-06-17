@@ -1,0 +1,55 @@
+{
+  "movies":
+    [
+    {
+      "Id" : "1",
+      "Title" : "Chiu2",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 1 star movie",
+      "Year" : "This is 1 star movie"
+    },
+    {
+      "Id" : "2",
+      "Title" : "Satish",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 2 star movie",
+      "Year" : "This is 2 star movie"
+    },
+    {
+      "Id" : "2",
+      "Title" : "Satish1",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 2 star movie",
+      "Year" : "This is 2 star movie"
+    },
+    {
+      "Id" : "2",
+      "Title" : "Satish2",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 2 star movie",
+      "Year" : "This is 2 star movie"
+    },
+    {
+      "Id" : "2",
+      "Title" : "Satish3",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 2 star movie",
+      "Year" : "This is 2 star movie"
+    },
+    {
+      "Id" : "2",
+      "Title" : "Satish4",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 2 star movie",
+      "Year" : "This is 2 star movie"
+    }
+  ],
+  "movie":
+    {
+      "Id" : "3",
+      "Title" : "Shaurya",
+      "Poster" : "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+      "Runtime" : "This is 3 star movie",
+      "Year" : "This is 3 star movie"
+    }
+  }

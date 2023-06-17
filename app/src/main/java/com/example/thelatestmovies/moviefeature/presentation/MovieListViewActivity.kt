@@ -29,10 +29,6 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
 
-
-
-
-
 class MovieListViewActivity : AppCompatActivity() {
     private val movieListViewModel: MovieListViewModel by viewModels()
 
@@ -60,7 +56,7 @@ class MovieListViewActivity : AppCompatActivity() {
 
     }
 
-    private fun handleMovieSelection(iD: String) {
+    private fun handleMovieSelection(iD: Int) {
 
         val intent = Intent(applicationContext, MovieDetailActivity::class.java)
         intent.putExtra("movieId", iD)
@@ -71,13 +67,13 @@ class MovieListViewActivity : AppCompatActivity() {
     @Composable
     fun MovieCard(movie: MovieModel) {
         GlideImage(
-            model = movie.Poster,
+            model = movie.poster_path,
             contentDescription = "image",
             modifier =
             Modifier
                 .fillMaxSize()
                 .clickable {
-                    handleMovieSelection(movie.Id)
+                    handleMovieSelection(movie.id)
                 }
         )
         Column(
@@ -87,7 +83,7 @@ class MovieListViewActivity : AppCompatActivity() {
 
         ) {
             Text(
-                text = movie.Title,
+                text = movie.original_title,
                 modifier = Modifier
 
             )
