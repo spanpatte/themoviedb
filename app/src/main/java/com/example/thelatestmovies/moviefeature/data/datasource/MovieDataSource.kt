@@ -5,5 +5,5 @@ import com.example.thelatestmovies.moviefeature.data.models.MovieDataModel
 
 interface MovieDataSource {
     suspend fun getMovies(): List<MovieDataModel>?
-    suspend fun getMovieDetail(): MovieDetailDataModel?
+    suspend fun getMovieDetail(id: Int): MovieDetailDataModel?
 }

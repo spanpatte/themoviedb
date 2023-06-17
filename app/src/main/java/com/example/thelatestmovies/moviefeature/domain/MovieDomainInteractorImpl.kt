@@ -13,7 +13,7 @@ class MovieDomainInteractorImpl(private var movieRepoInteractor: MovieRepo) :
     }
 
     //Load movie detail
-    override suspend fun loadMovieDetail(iD: String): MovieDetailDomainModel? {
-        return movieRepoInteractor.loadMovieDetail(iD)
+    override suspend fun loadMovieDetail(id: Int): MovieDetailDomainModel? {
+        return movieRepoInteractor.loadMovieDetail(id)
     }
 }

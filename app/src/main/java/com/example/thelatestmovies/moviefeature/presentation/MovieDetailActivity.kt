@@ -32,10 +32,10 @@ class MovieDetailActivity : AppCompatActivity() {
         DaggerMovieFeatureComponent.builder().build().inject(viewModel)
 
         //Which movie detail to be shown
-        val iD = intent.getStringExtra("movieId")
+        val id = intent.getIntExtra("movieId",0)
 
 
-        iD?.let {
+        id?.let {
 
             viewModel.loadMovieDetail(it)
             viewModel.exception.observe(this){
@@ -53,6 +53,8 @@ class MovieDetailActivity : AppCompatActivity() {
 
     }
 }
+
+
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable

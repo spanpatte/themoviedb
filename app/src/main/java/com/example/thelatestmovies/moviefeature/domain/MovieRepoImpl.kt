@@ -13,7 +13,7 @@ class MovieRepoImpl @Inject constructor(private val movieDataSource: MovieDataSo
         val moviesDataModel = movieDataSource.getMovies()
         return moviesDataModel?.let { MovieDataModelToDomainModelMapper.map(it) }
     }
-    override suspend fun loadMovieDetail(iD: String): MovieDetailDomainModel? {
-        return movieDataSource.getMovieDetail()?.toMovieDetailDomainModel()
+    override suspend fun loadMovieDetail(id: Int): MovieDetailDomainModel? {
+        return movieDataSource.getMovieDetail(id)?.toMovieDetailDomainModel()
     }
 }

@@ -57,10 +57,10 @@ class MovieListViewActivity : AppCompatActivity() {
 
     }
 
-    private fun handleMovieSelection(iD: Int) {
+    private fun handleMovieSelection(id: Int) {
 
         val intent = Intent(applicationContext, MovieDetailActivity::class.java)
-        intent.putExtra("movieId", iD)
+        intent.putExtra("movieId", id)
         startActivity(intent)
     }
 

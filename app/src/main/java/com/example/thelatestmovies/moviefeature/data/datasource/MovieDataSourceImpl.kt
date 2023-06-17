@@ -11,14 +11,13 @@ import javax.inject.Inject
 class MovieDataSourceImpl @Inject constructor(private val retrofit: Retrofit) : MovieDataSource{
     override suspend fun getMovies(): List<MovieDataModel>? {
         val api: MovieListApi = retrofit.create(MovieListApi::class.java)
-        //val result = api.getMovies(Configs.apiKey)
-        val result = api.getMovies()
-        return result.body()
+        val results = api.getMovies(Configs.apiKey).body()?.results
+        return results
     }
 
-    override suspend fun getMovieDetail(): MovieDetailDataModel? {
+    override suspend fun getMovieDetail(id: Int): MovieDetailDataModel? {
         val api: MovieDetailApi = retrofit.create(MovieDetailApi::class.java)
-        val result = api.getMovieDetail()
+        val result = api.getMovieDetail(id,Configs.apiKey)
         return result.body()
     }
 }

@@ -22,10 +22,10 @@ class MovieDetailViewModel : ViewModel() {
 
     val movieDetail = MutableLiveData<MovieDetailModel>()
 
-    fun loadMovieDetail(iD: String) {
+    fun loadMovieDetail(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                movieUseCase.loadMovieDetail(iD)?.let { setMovieDetail(it.toMovieDetailModel()) }
+                movieUseCase.loadMovieDetail(id)?.let { setMovieDetail(it.toMovieDetailModel()) }
             } catch (ex:Exception){
                 exception.postValue(ex)
             }

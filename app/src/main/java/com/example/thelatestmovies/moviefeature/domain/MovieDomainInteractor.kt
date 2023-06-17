@@ -9,5 +9,5 @@ interface MovieDomainInteractor {
     suspend fun loadMovies(): List<MovieDomainModel>?
 
     //Load movie detail from Id
-    suspend fun loadMovieDetail(iD: String): MovieDetailDomainModel?
+    suspend fun loadMovieDetail(id: Int): MovieDetailDomainModel?
 }
