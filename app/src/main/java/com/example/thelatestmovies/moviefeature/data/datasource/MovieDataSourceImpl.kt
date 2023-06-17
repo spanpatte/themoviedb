@@ -1,5 +1,6 @@
 package com.example.thelatestmovies.moviefeature.data.datasource
 
+import com.example.thelatestmovies.moviefeature.Configs
 import com.example.thelatestmovies.moviefeature.data.apis.MovieDetailApi
 import com.example.thelatestmovies.moviefeature.data.apis.MovieListApi
 import com.example.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
@@ -10,6 +11,7 @@ import javax.inject.Inject
 class MovieDataSourceImpl @Inject constructor(private val retrofit: Retrofit) : MovieDataSource{
     override suspend fun getMovies(): List<MovieDataModel>? {
         val api: MovieListApi = retrofit.create(MovieListApi::class.java)
+        //val result = api.getMovies(Configs.apiKey)
         val result = api.getMovies()
         return result.body()
     }

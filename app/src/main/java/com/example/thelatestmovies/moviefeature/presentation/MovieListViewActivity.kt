@@ -27,6 +27,7 @@ import androidx.lifecycle.Observer
 
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.thelatestmovies.moviefeature.Configs
 import com.example.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
 
 class MovieListViewActivity : AppCompatActivity() {
@@ -67,7 +68,7 @@ class MovieListViewActivity : AppCompatActivity() {
     @Composable
     fun MovieCard(movie: MovieModel) {
         GlideImage(
-            model = movie.poster_path,
+            model = Configs.imagePathBaseUrl + movie.poster_path,
             contentDescription = "image",
             modifier =
             Modifier
