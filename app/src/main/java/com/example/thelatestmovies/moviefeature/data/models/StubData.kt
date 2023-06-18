@@ -1,7 +1,7 @@
-package com.example.thelatestmovies.moviefeature.data
+package com.example.thelatestmovies.moviefeature.data.models
 
-import com.example.thelatestmovies.moviefeature.presentation.MovieDetailModel
-import com.example.thelatestmovies.moviefeature.presentation.MovieModel
+import com.example.thelatestmovies.moviefeature.presentation.models.MovieDetailModel
+import com.example.thelatestmovies.moviefeature.presentation.models.MovieModel
 
 
 /**

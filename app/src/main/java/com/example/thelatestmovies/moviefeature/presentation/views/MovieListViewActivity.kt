@@ -1,12 +1,9 @@
-package com.example.thelatestmovies.moviefeature.presentation
+package com.example.thelatestmovies.moviefeature.presentation.views
 
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
@@ -22,27 +19,40 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
+import com.example.thelatestmovies.moviefeature.dagger.MovieModule
+import com.example.thelatestmovies.moviefeature.presentation.viewmodels.MovieListViewModel
+import com.example.thelatestmovies.moviefeature.presentation.models.MovieModel
 
 
 class MovieListViewActivity : AppCompatActivity() {
-    private val movieListViewModel: MovieListViewModel by viewModels()
-    var builder: AlertDialog.Builder? = null
 
+    private val movieListViewModel: MovieListViewModel by lazy{
 
+        ViewModelProvider(
+            this,
+            MovieListViewModel.Factory(this.application)
+        )[MovieListViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
         //Inject model in Dagger
-        DaggerMovieFeatureComponent.builder().build().inject(movieListViewModel)
+        //DaggerMovieFeatureComponent.builder().movieModule(MovieModule(this)).build().inject(movieListViewModel)
+        var builder: DaggerMovieFeatureComponent.Builder =  DaggerMovieFeatureComponent.builder()
+        builder.movieModule(MovieModule(this))
+        builder.build().inject(movieListViewModel)
+
+        //DaggerMovieFeatureComponent.builder().build().inject(movieListViewModel)
+
 
         //Initial call to load movies
         movieListViewModel.loadMovies()
-
 
 
         setContent {

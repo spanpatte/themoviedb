@@ -1,6 +1,6 @@
-package com.example.thelatestmovies.moviefeature.presentation
+package com.example.thelatestmovies.moviefeature.presentation.models
 
-import com.example.thelatestmovies.moviefeature.domain.MovieDomainModel
+import com.example.thelatestmovies.moviefeature.domain.models.MovieDomainModel
 import com.example.thelatestmovies.moviefeature.domain.toMovieModel
 
 class MovieDomainModelToModelMapper{

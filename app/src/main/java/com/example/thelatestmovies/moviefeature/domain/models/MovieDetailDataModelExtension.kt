@@ -1,8 +1,7 @@
 package com.example.thelatestmovies.moviefeature.data.models
 
-import com.example.thelatestmovies.moviefeature.domain.DomainConfigs
-import com.example.thelatestmovies.moviefeature.domain.MovieDetailDomainModel
-import com.example.thelatestmovies.moviefeature.presentation.MovieDetailModel
+import com.example.thelatestmovies.moviefeature.domain.models.DomainConfigs
+import com.example.thelatestmovies.moviefeature.domain.models.MovieDetailDomainModel
 
 
 //To convert object from MovieDetailDao to MovieDetailModel for View

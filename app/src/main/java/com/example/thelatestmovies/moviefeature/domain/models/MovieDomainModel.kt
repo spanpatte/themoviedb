@@ -1,4 +1,4 @@
-package com.example.thelatestmovies.moviefeature.domain
+package com.example.thelatestmovies.moviefeature.domain.models
 
 
 data class MovieDomainModel(

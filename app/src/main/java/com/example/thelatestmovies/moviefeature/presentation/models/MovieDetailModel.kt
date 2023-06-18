@@ -1,7 +1,8 @@
-package com.example.thelatestmovies.moviefeature.domain
+package com.example.thelatestmovies.moviefeature.presentation.models
 
-
-data class MovieDetailDomainModel(
+//Model for view to display movie details
+data class
+MovieDetailModel(
     val id: Int,
     val original_title: String,
     val original_language: String,
