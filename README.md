@@ -11,4 +11,5 @@
 2. Exception handling with retry option.
 3. Splash screen
 4. Progress bar indicator
+
 ![splash](https://github.com/spanpatte/themoviedb/assets/1183582/247953c7-dcbe-4257-8d31-121df2a24f56)
