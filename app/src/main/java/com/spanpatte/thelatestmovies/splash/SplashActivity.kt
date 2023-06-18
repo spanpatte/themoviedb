@@ -16,7 +16,7 @@ class SplashActivity: ComponentActivity() {
 
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
-            delay(3000)
+            delay(2000)
             val intent = Intent(this@SplashActivity, MovieListViewActivity::class.java)
             startActivity(intent)
             finish()
