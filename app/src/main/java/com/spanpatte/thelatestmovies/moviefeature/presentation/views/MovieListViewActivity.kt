@@ -9,7 +9,10 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.livedata.observeAsState
@@ -24,8 +27,8 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.spanpatte.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
 import com.spanpatte.thelatestmovies.moviefeature.dagger.MovieModule
-import com.spanpatte.thelatestmovies.moviefeature.presentation.viewmodels.MovieListViewModel
 import com.spanpatte.thelatestmovies.moviefeature.presentation.models.MovieModel
+import com.spanpatte.thelatestmovies.moviefeature.presentation.viewmodels.MovieListViewModel
 
 
 class MovieListViewActivity : AppCompatActivity() {
@@ -118,13 +121,13 @@ class MovieListViewActivity : AppCompatActivity() {
 
     @Composable
     fun MovieList(movies: State<List<MovieModel>?>) {
-    Row() {
+    Row {
         //Lazy load the movie list.
 
         LazyColumn {
 
             movies.value?.forEach { movie ->
-                item() {
+                item {
                     //Add movie cards/items
                     MovieCard(movie)
                 }

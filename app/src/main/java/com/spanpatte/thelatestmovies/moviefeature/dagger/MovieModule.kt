@@ -2,10 +2,10 @@ package com.spanpatte.thelatestmovies.moviefeature.dagger
 
 import android.content.Context
 import com.spanpatte.thelatestmovies.moviefeature.data.datasource.*
-import com.spanpatte.thelatestmovies.moviefeature.data.repositories.MovieRepoImpl
 import com.spanpatte.thelatestmovies.moviefeature.data.repositories.MovieRepo
-import com.spanpatte.thelatestmovies.moviefeature.domain.interactors.MovieDomainInteractorImpl
+import com.spanpatte.thelatestmovies.moviefeature.data.repositories.MovieRepoImpl
 import com.spanpatte.thelatestmovies.moviefeature.domain.interactors.MovieDomainInteractor
+import com.spanpatte.thelatestmovies.moviefeature.domain.interactors.MovieDomainInteractorImpl
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

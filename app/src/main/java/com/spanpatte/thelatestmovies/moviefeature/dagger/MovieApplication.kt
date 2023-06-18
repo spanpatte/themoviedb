@@ -4,7 +4,5 @@ import android.app.Application
 
 
 //Application
-class MyApplication : Application() {
-
-}
+class MyApplication : Application()
 

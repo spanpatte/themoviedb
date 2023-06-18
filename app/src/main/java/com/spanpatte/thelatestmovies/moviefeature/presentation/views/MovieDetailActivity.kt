@@ -21,8 +21,8 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.spanpatte.thelatestmovies.moviefeature.dagger.DaggerMovieFeatureComponent
 import com.spanpatte.thelatestmovies.moviefeature.dagger.MovieModule
 import com.spanpatte.thelatestmovies.moviefeature.data.models.StubData
-import com.spanpatte.thelatestmovies.moviefeature.presentation.viewmodels.MovieDetailViewModel
 import com.spanpatte.thelatestmovies.moviefeature.presentation.models.MovieDetailModel
+import com.spanpatte.thelatestmovies.moviefeature.presentation.viewmodels.MovieDetailViewModel
 
 
 class MovieDetailActivity : AppCompatActivity() {

@@ -8,17 +8,16 @@
 
 
     <application
+        android:icon="@drawable/imdb"
         android:label="@string/app_name"
         android:theme="@style/Theme.TheLatestMovies"
-        android:icon="@drawable/imdb"
 
 
         tools:targetApi="31">
         <activity
             android:name="com.spanpatte.thelatestmovies.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.SplashScreenTheme"
-            >
+            android:theme="@style/Theme.SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,8 +28,7 @@
             android:exported="false" />
         <activity
             android:name="com.spanpatte.thelatestmovies.moviefeature.presentation.views.MovieListViewActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

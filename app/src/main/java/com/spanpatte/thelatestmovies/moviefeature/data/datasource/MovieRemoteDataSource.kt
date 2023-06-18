@@ -5,10 +5,11 @@ import android.util.Log
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieApiInterface
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieDetailApi
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieListApi
-import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDataModel
+import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import retrofit2.Retrofit
 import javax.inject.Inject
+
 object DataConfigs {
     const val movieApiBaseUrl = "https://api.themoviedb.org"
     const val apiKey = "9abede7c9e83c0d9c4b68b3559bb09d9"

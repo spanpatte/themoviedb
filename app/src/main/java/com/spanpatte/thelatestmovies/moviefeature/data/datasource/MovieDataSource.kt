@@ -1,7 +1,7 @@
 package com.spanpatte.thelatestmovies.moviefeature.data.datasource
 
-import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDataModel
+import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
 
 interface MovieDataSource {
     suspend fun getMovies(): List<MovieDataModel>?

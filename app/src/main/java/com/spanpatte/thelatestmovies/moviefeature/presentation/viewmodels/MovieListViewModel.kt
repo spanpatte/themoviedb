@@ -8,7 +8,9 @@ import androidx.lifecycle.*
 import com.spanpatte.thelatestmovies.moviefeature.domain.interactors.MovieDomainInteractor
 import com.spanpatte.thelatestmovies.moviefeature.presentation.models.MovieDomainModelToModelMapper
 import com.spanpatte.thelatestmovies.moviefeature.presentation.models.MovieModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class MovieListViewModel(context: Application) : AndroidViewModel(context) {
@@ -16,10 +18,17 @@ class MovieListViewModel(context: Application) : AndroidViewModel(context) {
         @Inject
     lateinit var movieDomainInteractor: MovieDomainInteractor
 
-    val movies = MutableLiveData<List<MovieModel>>()
+    private val _movies = MutableLiveData<List<MovieModel>>()
+    val movies
+    get() = _movies
 
-    var exception = mutableStateOf(false)
-    var loading = mutableStateOf(false)
+    private val _exception = mutableStateOf(false)
+    val exception
+    get() = _exception
+
+    private val _loading = mutableStateOf(false)
+    val loading
+        get() = _loading
 
     //Load movies
     fun loadMovies() {

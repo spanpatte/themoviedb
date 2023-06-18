@@ -17,9 +17,13 @@ class MovieDetailViewModel(context: Application) :  AndroidViewModel(context) {
     @Inject
     lateinit var movieUseCase: MovieDomainInteractor
 
-    val exception = mutableStateOf(false)
+    private val _exception = mutableStateOf(false)
+    val exception
+    get() = _exception
 
-    val movieDetail = MutableLiveData<MovieDetailModel>()
+    private val _movieDetail = MutableLiveData<MovieDetailModel>()
+    val movieDetail
+    get() = _movieDetail
 
     fun loadMovieDetail(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
