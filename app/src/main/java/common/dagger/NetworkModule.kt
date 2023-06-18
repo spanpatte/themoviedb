@@ -2,7 +2,7 @@ package common.dagger
 
 
 
-import com.example.thelatestmovies.moviefeature.data.datasource.DataConfigs
+import com.spanpatte.thelatestmovies.moviefeature.data.datasource.DataConfigs
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

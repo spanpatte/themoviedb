@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.thelatestmovies"
+        applicationId "com.spapatte.thelatestmovies"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -50,7 +50,7 @@ dependencies {
     //Jetpack compose UI
     implementation 'androidx.compose.material3:material3'
     implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.activity:activity-compose:1.6.1'
+    implementation 'androidx.activity:activity-compose:1.7.2'
     implementation 'androidx.compose.runtime:runtime-livedata'
 
     // Android Studio Preview support
@@ -74,7 +74,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
 //    Splash screen
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+    implementation 'androidx.core:core-splashscreen:1.1.0-alpha01'
 
 
     //Room Db
