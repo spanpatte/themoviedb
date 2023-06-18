@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.TheLatestMovies"
         android:icon="@drawable/imdb"
-        android:usesCleartextTraffic="true"
+
 
         tools:targetApi="31">
         <activity
