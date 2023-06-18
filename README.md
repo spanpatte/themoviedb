@@ -12,4 +12,5 @@
 3. Splash screen
 4. Progress bar indicator
 
-![splash](https://github.com/spanpatte/themoviedb/assets/1183582/247953c7-dcbe-4257-8d31-121df2a24f56)
+
+![splash](https://github.com/spanpatte/themoviedb/assets/1183582/db2f5ed4-7100-497f-8970-cc1715b1a9d2)
