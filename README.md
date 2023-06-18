@@ -14,3 +14,5 @@
 
 
 ![splash](https://github.com/spanpatte/themoviedb/assets/1183582/db2f5ed4-7100-497f-8970-cc1715b1a9d2)
+![progress](https://github.com/spanpatte/themoviedb/assets/1183582/e443ffdf-7c7b-4971-b127-6af371e13a34)
+![listview](https://github.com/spanpatte/themoviedb/assets/1183582/11e5c555-d3f5-49da-86cf-d644ceb88ba2)
