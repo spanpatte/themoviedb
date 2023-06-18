@@ -6,6 +6,7 @@
 3. Dagger2 for dependency injection
 4. Live data & Mutable state to update the UI at runtime
 5. Glide - For image loading
+
 **Extra:-**
 1. Room database for offline support
 2. Exception handling with retry option.
