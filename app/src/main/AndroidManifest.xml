@@ -15,7 +15,7 @@
 
         tools:targetApi="31">
         <activity
-            android:name="com.spanpatte.thelatestmovies.splash.SplashActivity"
+            android:name=".splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.SplashScreenTheme">
             <intent-filter>
@@ -24,10 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.spanpatte.thelatestmovies.moviefeature.presentation.views.MovieDetailActivity"
+            android:name=".moviefeature.presentation.views.MovieDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.spanpatte.thelatestmovies.moviefeature.presentation.views.MovieListViewActivity"
+            android:name=".moviefeature.presentation.views.MovieListViewActivity"
             android:exported="true" />
     </application>
 
