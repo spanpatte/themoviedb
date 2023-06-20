@@ -2,6 +2,7 @@ package com.spanpatte.thelatestmovies.moviefeature.data.datasource
 
 
 import android.util.Log
+import com.spanpatte.thelatestmovies.BuildConfig
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieApiInterface
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieDetailApi
 import com.spanpatte.thelatestmovies.moviefeature.data.apis.MovieListApi
@@ -10,14 +11,11 @@ import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataMod
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-object DataConfigs {
-    const val movieApiBaseUrl = "https://api.themoviedb.org"
-    const val apiKey = "9abede7c9e83c0d9c4b68b3559bb09d9"
-}
+
 class MovieRemoteDataSource @Inject constructor(private val retrofit: Retrofit) : MovieDataSource{
     override suspend fun getMovies(): List<MovieDataModel>? {
         val api: MovieApiInterface = retrofit.create(MovieListApi::class.java)
-        val results = api.getMovies(DataConfigs.apiKey).body()?.results
+        val results = api.getMovies(BuildConfig.TMDB_API_KEY).body()?.results
         return results
     }
 
@@ -27,7 +25,7 @@ class MovieRemoteDataSource @Inject constructor(private val retrofit: Retrofit) 
 
     override suspend fun getMovieDetail(id: Int): MovieDetailDataModel? {
         val api: MovieApiInterface = retrofit.create(MovieDetailApi::class.java)
-        val result = api.getMovieDetail(id,DataConfigs.apiKey)
+        val result = api.getMovieDetail(id,BuildConfig.TMDB_API_KEY)
         return result.body()
     }
 

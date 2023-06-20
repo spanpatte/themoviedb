@@ -1,7 +1,7 @@
 package com.spanpatte.thelatestmovies.moviefeature.domain.interactors
 
 import com.spanpatte.thelatestmovies.moviefeature.data.models.toMovieDetailDomainModel
-import com.spanpatte.thelatestmovies.moviefeature.data.repositories.MovieRepo
+import com.spanpatte.thelatestmovies.moviefeature.domain.repository.MovieRepo
 import com.spanpatte.thelatestmovies.moviefeature.domain.models.MovieDataModelToDomainModelMapper
 import com.spanpatte.thelatestmovies.moviefeature.domain.models.MovieDetailDomainModel
 import com.spanpatte.thelatestmovies.moviefeature.domain.models.MovieDomainModel

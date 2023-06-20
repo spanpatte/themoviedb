@@ -1,8 +1,5 @@
 package common.dagger
-
-
-
-import com.spanpatte.thelatestmovies.moviefeature.data.datasource.DataConfigs
+import com.spanpatte.thelatestmovies.BuildConfig
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -15,7 +12,7 @@ class NetworkModule {
     @Singleton
     internal fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(DataConfigs.movieApiBaseUrl)
+            .baseUrl(BuildConfig.TMDB_API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

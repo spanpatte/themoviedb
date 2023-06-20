@@ -1,4 +1,4 @@
-package com.spanpatte.thelatestmovies.moviefeature.data.repositories
+package com.spanpatte.thelatestmovies.moviefeature.domain.repository
 
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDataModel
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel

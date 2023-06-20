@@ -10,16 +10,20 @@ android {
     defaultConfig {
         applicationId "com.spapatte.thelatestmovies"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField('String', "TMDB_API_KEY", TMDB_API_KEY)
+        buildConfigField('String', "TMDB_API_BASE_URL", TMDB_API_BASE_URL)
+
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

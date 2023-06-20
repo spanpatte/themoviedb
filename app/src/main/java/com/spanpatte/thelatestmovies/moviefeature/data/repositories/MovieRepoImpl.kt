@@ -5,6 +5,7 @@ import com.spanpatte.thelatestmovies.moviefeature.data.datasource.MovieDatabaseD
 import com.spanpatte.thelatestmovies.moviefeature.data.datasource.MovieRemoteDataSource
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDataModel
 import com.spanpatte.thelatestmovies.moviefeature.data.models.MovieDetailDataModel
+import com.spanpatte.thelatestmovies.moviefeature.domain.repository.MovieRepo
 import javax.inject.Inject
 
 //Implementation for Movie repo
